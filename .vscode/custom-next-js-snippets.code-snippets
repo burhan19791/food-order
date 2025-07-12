@@ -1,0 +1,661 @@
+{
+	"TS Type": {
+		"prefix": "tstype",
+		"body": [
+			"type Props = {${0}};",
+		],
+		"description": "Tye Script Type"
+	},
+	"TS Type Export": {
+		"prefix": "tstypee",
+		"body": [
+			"export type Props = {${0}};",
+		],
+		"description": "Tye Script Type"
+	},
+	"Arrow function (const)": {
+		"prefix": "jsaf",
+		"body": [
+			"const ${1:fnName} = (${2:params}) => {",
+			"  ${0}",
+			"};"
+		],
+		"description": "ES6 const arrow function"
+	},
+	"Arrow function (const) Export": {
+		"prefix": "jsafe",
+		"body": [
+			"export const ${1:fnName} = (${2:params}) => {",
+			"  ${0}",
+			"};"
+		],
+		"description": "ES6 const arrow function"
+	},
+	"Named function": {
+		"prefix": "jsfn",
+		"body": [
+			"function ${1:fnName}(${2:params}) {",
+			"  ${0}",
+			"}"
+		],
+		"description": "Classic named function"
+	},
+	"Named function Export": {
+		"prefix": "jsfne",
+		"body": [
+			"export function ${1:fnName}(${2:params}) {",
+			"  ${0}",
+			"}"
+		],
+		"description": "Classic named function"
+	},
+	"Constant": {
+		"prefix": "jsconst",
+		"body": [
+			"const ${1:name} = \"${0}\";",
+		],
+		"description": "Simple constant"
+	},
+	"Constant Export": {
+		"prefix": "jsconste",
+		"body": [
+			"export const ${1:name} = \"${0}\";",
+		],
+		"description": "Simple constant export"
+	},
+	"Array.map": {
+		"prefix": "jsmap",
+		"body": [
+			"${1:array}.map((${2:item}) => {",
+			"  ${0}",
+			"});"
+		],
+		"description": "Array.prototype.map skeleton"
+	},
+	"Array.filter": {
+		"prefix": "jsfilter",
+		"body": [
+			"${1:array}.filter((${2:item}) => ${3:condition});"
+		],
+		"description": "Array.prototype.filter one-liner"
+	},
+	"Array.reduce": {
+		"prefix": "jsreduce",
+		"body": [
+			"${1:array}.reduce((${2:acc}, ${3:item}) => {",
+			"  ${0}",
+			"}, ${4:initial});"
+		],
+		"description": "Array.prototype.reduce template"
+	},
+	"Named import": {
+		"prefix": "jsimp",
+		"body": "import { ${2:member} } from '${1:module}';",
+		"description": "ES module named import"
+	},
+	"Default export": {
+		"prefix": "jsexpd",
+		"body": "export default ${1:identifier};",
+		"description": "ES module default export"
+	},
+	"Object shorthand": {
+		"prefix": "jsobj",
+		"body": [
+			"const ${1:name} = {",
+			"  ${2:key}: ${3:type},",
+			"  ${0}",
+			"};"
+		],
+		"description": "Object literal shorthand"
+	},
+	"Destructure props": {
+		"prefix": "jsdes",
+		"body": "const { ${1:prop} } = ${2:object};",
+		"description": "Object destructuring"
+	},
+	"Next Layout Page": {
+		"prefix": "cmplayout",
+		"body": [
+			"'use client';",
+			"",
+			"export default function ${1:Name}Layout({",
+			"  children,",
+			"}: Readonly<{",
+			"  children: React.ReactNode;",
+			"}>) {",
+			"  return <>{children}</>;",
+			"}${0}",
+		],
+		"description": "Next Layout page"
+	},
+	"Next Page": {
+		"prefix": "cmppage",
+		"body": [
+			"'use client';",
+			"",
+			"export default function ${1:Name}Page() {",
+			"  return <>${0}</>;",
+			"}",
+		],
+		"description": "Next page"
+	},
+	"Next Component": {
+		"prefix": "cmpcmp",
+		"body": [
+			"'use client';",
+			"",
+			"type Props = {};",
+			"",
+			"export default function ${1:Name}({}: Props) {",
+			"  return <>${0}</>;",
+			"}",
+		],
+		"description": "Next Component"
+	},
+	"Next Skeleton Component": {
+		"prefix": "cmpskeleton",
+		"body": [
+			"'use client';",
+			"",
+			"type Props = {};",
+			"",
+			"export default function ${1:Name}Skeleton({}: Props) {",
+			"  return <>${0}</>;",
+			"}",
+		],
+		"description": "Next Skeleton Component"
+	},
+	"Next Alert Component": {
+		"prefix": "cmpalert",
+		"body": [
+			"'use client';",
+			"",
+			"import { Alert } from 'flowbite-react';",
+			"import { BiSolidInfoCircle } from 'react-icons/bi';",
+			"",
+			"type ClickHandler = () => void;",
+			"type Props = {",
+			"  message: string;",
+			"  detail?: string;",
+			"};",
+			"",
+			"export default function ${1:Name}Alert({ message, detail }: Props) {",
+			"  return (",
+			"    <Alert",
+			"      className=\"px-6 pt-4 pb-5\"",
+			"      additionalContent={<div>${ detail}</div>}",
+			"     color=\"light\"",
+			"      icon={BiSolidInfoCircle}",
+			"      rounded",
+			"    >",
+			"      <span className=\"font-semibold\">${ message}</span>",
+			"    </Alert>",
+			"  );",
+			"}${0}",
+		],
+		"description": "Next Skeleton Component"
+	},
+	"Next Modal Component": {
+		"prefix": "cmpmodal",
+		"body": [
+			"'use client';",
+			"",
+			"import { Alert, Button, Modal, ModalBody, ModalHeader } from 'flowbite-react';",
+			"import { BiSolidInfoCircle } from 'react-icons/bi';",
+			"",
+			"type ClickHandler = () => void;",
+			"type Props = {",
+			"  showModal: boolean;",
+			"  message: string;",
+			"  detail?: string;",
+			"  closeAction: ClickHandler;",
+			"  okAction?: ClickHandler;",
+			"};",
+			"export default function ${1:Name}Modal({",
+			"  showModal,",
+			"  message,",
+			"  detail,",
+			"  closeAction,",
+			"  okAction,",
+			"}: Props) {",
+			"  return (",
+			"    <Modal show={showModal} size=\"md\" onClose={closeAction} popup>",
+			"      <ModalHeader />",
+			"      <ModalBody>",
+			"        <div>",
+			"          <div className=\"mb-4 text-center text-xl font-semibold dark:text-white\">",
+			"            {message}",
+			"          </div>",
+			"          <Alert",
+			"            className=\"mb-4\"",
+			"            color=\"light\"",
+			"            icon={BiSolidInfoCircle}",
+			"            rounded",
+			"          >",
+			"            <span>{detail}</span>",
+			"          </Alert>",
+			"          <div className=\"mt-6 flex justify-center gap-4\">",
+			"            <Button",
+			"              className=\"bg-green-500 hover:bg-green-600 focus:ring-transparent\"",
+			"              onClick={okAction}",
+			"            >",
+			"              Ok, sure",
+			"            </Button>",
+			"          </div>",
+			"        </div>",
+			"      </ModalBody>",
+			"    </Modal>",
+			"  );",
+			"}${0}",
+		],
+		"description": "Next Modal Component"
+	},
+	"JSX Section Title": {
+		"prefix": "jsxsectitle",
+		"body": [
+			"<SectionTitle title=\"${0}\" />",
+		],
+		"description": "JSX Section Title"
+	},
+	"JSX Section Error": {
+		"prefix": "jsxsecerror",
+		"body": [
+			"<SectionError${0} refetchAction={refetch} isFetching={isFetching} />",
+		],
+		"description": "JSX Section Error"
+	},
+	"JSX Info Modal": {
+		"prefix": "jsxinfomodal",
+		"body": [
+			"{/* const [showInfoModal, setShowInfoModal] = useState(false); */}",
+			"<InfoModal",
+			"  message=\"${0}\"",
+			"  detail=\"\"",
+			"  showModal={showInfoModal}",
+			"  closeAction={() => setShowOkModal(false)}",
+			"/>;",
+		],
+		"description": "JSX Info Modal"
+	},
+	"JSX Confirmation Modal": {
+		"prefix": "jsxconfirmmodal",
+		"body": [
+			"{/* const [showConfirmationModal, setShowConfirmationModal] = useState(false); */}",
+			"<ConfirmationModal",
+			"  message=\"${0}\"",
+			"  detail=\"\"",
+			"  showModal={showConfirmationModal}",
+			"  yesAction={() => setShowConfirmationModal(false)}",
+			"  noAction={() => setShowRemoveDepositModal(false)}",
+			"/>;",
+		],
+		"description": "JSX Confirmation Modal"
+	},
+	"JSX Card": {
+		"prefix": "jsxcard",
+		"body": [
+			"<div className=\"rounded-lg bg-white p-6 drop-shadow-xl drop-shadow-gray-100\">",
+			"  ${0}",
+			"</div>"
+		],
+		"description": "JSX Card"
+	},
+	"JSX Modal": {
+		"prefix": "jsxmodal",
+		"body": [
+			"{/* const [show${1:Name}Modal, set${1:Name}ShowModal] = useState(false); */}",
+			"<${1:Name}Modal",
+			"  message=\"${0}\"",
+			"  detail=\"\"",
+			"  showModal={showModal}",
+			"  closeAction={() => set${1:Name}ShowModal(false)}",
+			"/>",
+		],
+		"description": "JSX Modal"
+	},
+	"JSX FB Form Component": {
+		"prefix": "fbform",
+		"body": [
+			"<form onSubmit={handleSubmit(onSubmit)} autoComplete=\"off\">",
+			"  ${0}",
+			"</form>",
+		],
+		"description": "JSX FB Form Component"
+	},
+	"JSX Form Component": {
+		"prefix": "fbtext",
+		"body": [
+			"<TextInput",
+			"  id=\"\"",
+			"  disabled={false}",
+			"  {...register('')}",
+			"  className=\"\"",
+			"  maxLength={}",
+			"  placeholder=\"${0}\"",
+			"  onClick={() => {",
+			"  }}",
+			"/>",
+		],
+		"description": "JSX Form Component"
+	},
+	"Next Use Params": {
+		"prefix": "nsuseparams",
+		"body": [
+			"const params = useParams();${0}",
+		],
+		"description": "Next Use Params Hook"
+	},
+	"Next Use State": {
+		"prefix": "nsusestate",
+		"body": [
+			"const [${1:flag}, set${1:Flag}] = useState(\"${0}\");",
+		],
+		"description": "Next Use State Hook"
+	},
+	"Next Use State stirng | null": {
+		"prefix": "nsusestatesn",
+		"body": [
+			"const [${1:flag}, set${1:Flag}] = useState<string | null>(null);${0}",
+		],
+		"description": "Next Use State with type string | null"
+	},
+	"Next Use State number | null": {
+		"prefix": "nsusestatenn",
+		"body": [
+			"const [${1:flag}, set${1:Flag}] = useState<number | null>(null);${0}",
+		],
+		"description": "Next Use State with type number | null"
+	},
+	"Next Use Ref": {
+		"prefix": "nsuseref",
+		"body": [
+			"const ref = useRef<(HTMLElement | null)>(null);${0}",
+		],
+		"description": "Next Use Ref Hook"
+	},
+	"Next Use Query": {
+		"prefix": "nsusequery",
+		"body": [
+			"const { data, isLoading, error, refetch, isFetching, isError, isSuccess } = ",
+			"  use${1:Name}();${0}"
+		],
+		"description": "Next Use React Query Hook"
+	},
+	"Next Use Mutation": {
+		"prefix": "nsusemutation",
+		"body": [
+			"const { mutateAsync, isPending, isSuccess, error, reset: resetMutation, } = ",
+			"  use${1:Name}();${0}"
+		],
+		"description": "Next Use React Query Hook"
+	},
+	"Next Use Effect": {
+		"prefix": "nsuseeffect",
+		"body": [
+			"useEffect(() => {}, [${0}]);",
+		],
+		"description": "Next Use React Query Hook"
+	},
+	"Next Use Visibility": {
+		"prefix": "nsusevisibility",
+		"body": [
+			"const { visible, show } = useTimedVisibility${0}({",
+			"  onHide: () => {},",
+			"});",
+		],
+		"description": "Next Use Visibility"
+	},
+	"Next Use Router": {
+		"prefix": "nsuserouter",
+		"body": [
+			"const router = useRouter${0}();",
+		],
+		"description": "Next Use Router"
+	},
+	"Next Router Push": {
+		"prefix": "nsrouterpush",
+		"body": [
+			"router.push(`${0}`);",
+		],
+		"description": "Next Router Push"
+	},
+	"Next Use Form": {
+		"prefix": "nsuseform",
+		"body": [
+			"/* import { z } from 'zod';",
+			"import { useForm } from 'react-hook-form';",
+			"import { zodResolver } from '@hookform/resolvers/zod'; */",
+			"",
+			"const schema = z.object({",
+			"  declarationNo: z",
+			"    .string()",
+			"    .length(8, { message: '' })",
+			"    .refine((val) => val != null, {",
+			"      message: '',",
+			"    }),",
+			"});",
+			"",
+			"type FormData = z.infer<typeof schema>;",
+			"",
+			"const {",
+			"  register,",
+			"  handleSubmit,",
+			"  formState: { errors, isValid },",
+			"  reset,",
+			"} = useForm<FormData>({",
+			"  resolver: zodResolver(schema),",
+			"  mode: 'onChange',",
+			"});",
+			"",
+			"const onSubmit = async (data: FormData) => {",
+			"  /* const response = await mutateAsync({  });",
+			"  reset(); */",
+			"};${0}",
+		],
+		"description": "Next Use Form"
+	},
+	"Next Service Get Function": {
+		"prefix": "nsservicegetfn",
+		"body": [
+			"get${1:Name}: async ({ id }: Get${1:Name}Request): Promise<Get${1:Name}Response> => {",
+			"  const url = `/*${0}/${ id}/`;",
+			"  const response = await httpClient.get<Get${1:Name}Response>(url);",
+			"  return response.data;",
+			"},",
+		],
+		"description": "Next Service Get Function"
+	},
+	"Next Service Post Function": {
+		"prefix": "nsservicepostfn",
+		"body": [
+			"post${1:Name}: async ({ id, data }: Post${1:Name}Request): Promise<Get${1:Name}Response> => {",
+			"  const url = `/*${0}/${ id}/`;",
+			"  const response = await httpClient.post<Get${1:Name}Response>(url, data);",
+			"  return response.data",
+			"},",
+		],
+		"description": "Next Service Post Function"
+	},
+	"Next Service Put Function": {
+		"prefix": "nsserviceputfn",
+		"body": [
+			"post${1:Name}: async ({ id, data }: Post${1:Name}Request): Promise<Get${1:Name}Response> => {",
+			"  const url = `/*${0}/${ id}/`;",
+			"  const response = await httpClient.put<Get${1:Name}Response>(url, data);",
+			"  return response.data",
+			"},",
+		],
+		"description": "Next Service Put Function"
+	},
+	"Next Service Delete Function": {
+		"prefix": "nsservicedelfn",
+		"body": [
+			"get${1:Name}: async ({ id }: Get${1:Name}Request): Promise<Get${1:Name}Response> => {",
+			"  const url = `/*${0}/${ id}/`;",
+			"  const response = await httpClient.delete<Get${1:Name}Response>(url);",
+			"  return response.data;",
+			"},",
+		],
+		"description": "Next Service Delete Function"
+	},
+	"Next RQ Query Hook": {
+		"prefix": "nsrqqueryhook",
+		"body": [
+			"export const useGet${1:Name} = (id: string) => {",
+			"  return useQuery<Get${1:Name}Response, Error>({",
+			"    queryKey: ['get${1:Name}', id],",
+			"    queryFn: () => service.get${1:Name}({ id }),",
+			"    staleTime: 1000 * 60 * 5, // 5 minutes",
+			"    /* enabled: !!id,",
+			"    retry: () => false,",
+			"    refetchOnWindowFocus: false, */",
+			"  });",
+			"};${0}",
+		],
+		"description": "Next RQ Query Hook"
+	},
+	"Next RQ Mutation Hook": {
+		"prefix": "nsrqmutationhook",
+		"body": [
+			"export const use${1:name} = () => {",
+			"  /* const queryClient = useQueryClient(); */",
+			"  return useMutation<",
+			"    Upload${1:name}Response,",
+			"    Error,",
+			"    Upload${1:name}Request",
+			"  >({",
+			"    mutationFn: ({ id, data }) =>",
+			"      service.${1:name}({",
+			"        id, data",
+			"      }),",
+			"  /*onSuccess: (data, { key }) => {",
+			"      queryClient.setQueryData<DataType>(",
+			"        ['__querykey__', id],",
+			"        (old) => {",
+			"          return old;",
+			"        },",
+			"      );",
+			"    }, */",
+			"  /*onSuccess: (_, id) => {",
+			"      queryClient.invalidateQueries({ queryKey: ['__querykey__'] });",
+			"      queryClient.removeQueries({ queryKey: ['__querykey__', id] });",
+			"    }, */",
+			"  });",
+			"};${0}",
+		],
+		"description": "Next RQ Mutatioin Hook"
+	},
+	"Next on Function": {
+		"prefix": "nsonfn",
+		"body": [
+			"function on${1:Name}() {${0}}"
+		],
+		"description": "Next on Function"
+	},
+	"Next handler Function": {
+		"prefix": "nshandlerfn",
+		"body": [
+			"function ${1:name}Handler() {${0}}"
+		],
+		"description": "Next handler Function"
+	},
+	"MSW Get Hnadler": {
+		"prefix": "mswgethandler",
+		"body": [
+			"http.get('/api/*${0}/:id/*', async ({ params }: { params: { id: string } }) => {",
+			"  const { id } = params;",
+			"",
+			"  await delay(2000);",
+			"",
+			"  /* Internal Server Error scenario */",
+			"  /* return HttpResponse.json(null, { status: 500 }); */",
+			"",
+			"  /* Bad Request test scenario */",
+			"  /* return HttpResponse.json(null, { status: 400 }); */",
+			"",
+			"  /* Not Found test scenario */",
+			"  /* return HttpResponse.json(null, { status: 404 }); */",
+			"",
+			"  const data = {};",
+			"  return HttpResponse.json(data, { status: 200 });",
+			"}),",
+		],
+		"description": "MSW Get Hnadler"
+	},
+	"MSW Post Hnadler": {
+		"prefix": "mswposthandler",
+		"body": [
+			"http.post('/api/*${0}/:id/*', async ({ request, params }) => {",
+			"  const { id } = params;",
+			"",
+			"  /* const formData = await request.formData();",
+			"  const file = formData.get('file') as File; */",
+			"",
+			"  /* const body = await request.json<BodyType>(); */",
+			"",
+			"  await delay(2000);",
+			"",
+			"  /* Internal Server Error scenario */",
+			"  /* return HttpResponse.json(null, { status: 500 }); */",
+			"",
+			"  /* Bad Request test scenario */",
+			"  /* return HttpResponse.json(null, { status: 400 }); */",
+			"",
+			"  /* Not Found test scenario */",
+			"  /* return HttpResponse.json(null, { status: 404 }); */",
+			"",
+			"  const data = {};",
+			"  return HttpResponse.json(data, { status: 200 });",
+			"}),",
+		],
+		"description": "MSW Post Hnadler"
+	},
+	"MSW Put Hnadler": {
+		"prefix": "mswputhandler",
+		"body": [
+			"http.put('/api/*${0}/:id/*', async ({ request, params }) => {",
+			"  const { id } = params;",
+			"",
+			"  /* const body = await request.json<BodyType>(); */",
+			"",
+			"  await delay(2000);",
+			"",
+			"  /* Internal Server Error scenario */",
+			"  /* return HttpResponse.json(null, { status: 500 }); */",
+			"",
+			"  /* Bad Request test scenario */",
+			"  /* return HttpResponse.json(null, { status: 400 }); */",
+			"",
+			"  /* Not Found test scenario */",
+			"  /* return HttpResponse.json(null, { status: 404 }); */",
+			"",
+			"  const data = {};",
+			"  return HttpResponse.json(data, { status: 200 });",
+			"}),",
+		],
+		"description": "MSW Put Hnadler"
+	},
+	"MSW Delete Hnadler": {
+		"prefix": "mswdelhandler",
+		"body": [
+			"http.put('/api/*${0}/:id/*', async ({ request, params }) => {",
+			"  const { id } = params;",
+			"",
+			"  await delay(2000);",
+			"",
+			"  /* Internal Server Error scenario */",
+			"  /* return HttpResponse.json(null, { status: 500 }); */",
+			"",
+			"  /* Bad Request test scenario */",
+			"  /* return HttpResponse.json(null, { status: 400 }); */",
+			"",
+			"  /* Not Found test scenario */",
+			"  /* return HttpResponse.json(null, { status: 404 }); */",
+			"",
+			"  const data = {};",
+			"  return HttpResponse.json(data, { status: 200 });",
+			"}),",
+		],
+		"description": "MSW Delete Hnadler"
+	},
+}

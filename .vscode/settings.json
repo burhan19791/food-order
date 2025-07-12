@@ -1,7 +1,35 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
-  }
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "strings": true // Shows suggestions even in class strings
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["@apply\\s([^;]+)", "'([^']+)'"],
+    ["className=['\"]([^'\"]+)['\"]", "[\"'`]([^\"'`]*)[\"'`]"],
+    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    [
+      "createTheme(?:<\\w+>)?\\s*\\(([^)]*)\\)",
+      "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"
+    ]
+  ],
+  "eslint.enable": false,
+  "css.validate": false, // Disable built-in CSS validator (conflicts with Tailwind)
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "theme"]
 }
