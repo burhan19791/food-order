@@ -1,6 +1,7 @@
 import { images, offers } from "@/constants";
 import React, { Fragment } from "react";
 import {
+  Button,
   FlatList,
   Image,
   Pressable,
@@ -11,8 +12,13 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import cn from "clsx";
 import { CartButton } from "@/components/cart-button.cmp";
+import { useAuthStore } from "@/store/auth.store";
 
 export default function Index() {
+  const { user } = useAuthStore();
+
+  console.log("USER:", JSON.stringify(user, null, 2));
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <FlatList
@@ -62,7 +68,7 @@ export default function Index() {
           );
         }}
         contentContainerClassName="pb-28 px-5"
-        ListHeaderComponent={
+        ListHeaderComponent={() => (
           <View className="flex-between flex-row w-full my-5">
             <View className="flex-start">
               <Text className="small-bold text-primary">DELIVER TO</Text>
@@ -79,7 +85,7 @@ export default function Index() {
             </View>
             <CartButton />
           </View>
-        }
+        )}
       />
     </SafeAreaView>
   );
